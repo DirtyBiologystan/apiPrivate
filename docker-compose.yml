@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+
+  back:
+    build: api/
+    volumes:
+      -  ./api/:/application
+    ports:
+      - 8000:8000
+    command: ["npm","run","dev"]
+  scrap:
+    build: scrap/
+    volumes:
+      - ./scrap/:/application
+    command: ["npm","run","dev"]
+  redis:
+    image: redis
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Crashapagos",
+    "départements": [
+      "Crash Ouest",
+      "Crash Est",
+      "Crash Nord",
+      "Crash Sud",
+      "Crash Centre",
+      "Terre du milieu",
+      "Crash Longiforme",
+      "Crash Vide"
+    ]
+  },
+  {
+    "name": "V.I.E",
+    "départements": ["Vallé du Nord", "Vallé du Sud", "Vallé Centrale"]
+  },
+  {
+    "name": "Grand Sud",
+    "départements": ["Route du Sud", "Route de la Retrouvaille"]
+  },
+  {
+    "name": "Plateaux de la Résolution",
+    "départements": [
+      "Route de la résolution",
+      "Plateau ouest",
+      "Plateau central",
+      "Plateau est"
+    ]
+  },
+  {
+    "name": "Ocean Thétis",
+    "départements": [
+      "Plages",
+      "Falaises",
+      "Plages",
+      "Mer du Sud",
+      "Abîmes",
+      "Littoral Sud",
+      "Côte Centrale",
+      "Littoral Nord",
+      "Mer du Nord"
+    ]
+  },
+  {
+    "name": "La Méridionale",
+    "départements": [
+      "Montagnes de l'Ouest",
+      "Montagnes du Centre",
+      "Montagnes de l'Est",
+      "Désert de l'Ouest",
+      "Désert de l'Est",
+      "Désert Central"
+    ]
+  }
+]

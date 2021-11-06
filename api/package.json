@@ -1,0 +1,23 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "prettier -w src/",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "predev":"npm i"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.12",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  }
+}

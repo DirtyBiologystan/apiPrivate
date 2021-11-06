@@ -152,37 +152,37 @@
   {
     "name": "Montagne de l'Ouest",
     "min": { "x": 101, "y": 121 },
-    "max": { "x": 155, "y": 150 },
+    "max": { "x": 155, "y": 149 },
     "discord": "https://discord.com/invite/By6ZgesS"
   },
   {
     "name": "Montagne du Centre",
     "min": { "x": 156, "y": 121 },
-    "max": { "x": 199, "y": 150 },
+    "max": { "x": 199, "y": 149 },
     "discord": "https://discord.com/invite/By6ZgesS"
   },
   {
     "name": "Montagne de l'Est",
-    "min": { "x": 197, "y": 147 },
-    "max": { "x": 240, "y": 209 },
+    "min": { "x": 200, "y": 121 },
+    "max": { "x": 240, "y": 149 },
     "discord": "https://discord.com/invite/By6ZgesS"
   },
   {
     "name": "Désert de l'Ouest",
-    "min": { "x": 101, "y": 155 },
-    "max": { "x": 147, "y": 210 },
+    "min": { "x": 101, "y": 150 },
+    "max": { "x": 155, "y": 209 },
     "discord": "https://discord.com/invite/rt4nT4ZD"
   },
   {
     "name": "Désert de l'Est",
-    "min": { "x": 197, "y": 147 },
+    "min": { "x": 200, "y": 150 },
     "max": { "x": 240, "y": 209 },
     "discord": "https://discord.com/invite/QyavyG9V"
   },
   {
     "name": "Désert Central",
-    "min": { "x": 156, "y": 196 },
-    "max": { "x": 147, "y": 209 },
+    "min": { "x": 156, "y": 150 },
+    "max": { "x": 199, "y": 209 },
     "discord": "https://discord.com/invite/dqZfmbkb"
   },
   {

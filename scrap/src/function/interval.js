@@ -37,7 +37,7 @@ module.exports = async ({ countPixel, lastIndexInFlag, date, model }) => {
       };
     }
     const sockets = await roomNewPixel.allSockets();
-    if(sockets.length){
+    if(!sockets.length){
       roomNewPixel.emit("changePixel",await model.findOne({indexInFlag: flagData.indexInFlag},{_id:false}));
     }
     return {

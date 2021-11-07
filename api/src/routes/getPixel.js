@@ -4,7 +4,6 @@ const Joi = require("joi");
 const redis = require("../services/redis");
 const models = require("../services/models");
 const { handler: getDépartements } = require("./getDépartements");
-const { handler: getUser } = require("./getUser");
 
 Object.assign(module.exports, {
   regex: /^\/pixels\/$/,
@@ -21,7 +20,7 @@ Object.assign(module.exports, {
       index: Joi.number().integer().positive().required(),
     }),
     Joi.object({
-      index: Joi.number().integer().positive().required(),
+      q: Joi.string().min(3).required(),
     }),
     Joi.object({}),
   ),
@@ -53,6 +52,16 @@ Object.assign(module.exports, {
          },
          { _id: false }
        )
+    }else if(data.q){
+      const q = data.q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      pPixel = models["Pixels"]
+       .find(
+         {
+           pseudo: {$regex:q,$options:"i"},
+         },
+         { _id: false }
+       );
+       return pPixel;
     }else{
       pPixel = models["Pixels"].find({},{ _id: false })
       return pPixel;
@@ -60,12 +69,9 @@ Object.assign(module.exports, {
     const pixel = await pPixel;
         if(pixel){
     const pDépartement = getDépartements(null, pixel);
-
-
       return {
         ...pixel.toObject(),
         departements: await pDépartement,
-        user: JSON.parse(await getUser([, pixel.author])),
       };
     }else{
       throw Error("not found");

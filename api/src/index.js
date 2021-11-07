@@ -50,7 +50,7 @@ const init = async () => {
             params = Object.fromEntries(new URLSearchParams(urlSplit[1]));
           }
           try {
-            console.log(`${req.method} ${req.url} ${req.headers["referer"]}`);
+            console.log(`${req.method} ${req.url} ${req.headers.referer} ${req.headers["user-agent"]}`);
             if (req.method === "GET") {
               if (route.schema) {
                 const { error, value } = route.schema.validate(params);

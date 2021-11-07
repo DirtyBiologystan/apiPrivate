@@ -60,7 +60,6 @@ const init = async () => {
                     (errorDetail) => errorDetail.message
                   );
                   res.end(JSON.stringify({ errors: errors }));
-                  resolve();
                   return;
                 }
                 console.log(value);

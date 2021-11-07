@@ -13,7 +13,7 @@ Object.assign(module.exports, {
   schema:     Joi.object({
         x: Joi.number().integer().positive().required(),
         y: Joi.number().integer().positive().required(),
-        r: Joi.number().integer().positive().required(),
+        r: Joi.number().integer().required(),
       }),
 
   handler: async (url, data) => {
@@ -22,10 +22,8 @@ Object.assign(module.exports, {
     let pixels = await models["Pixels"]
      .find(
        {
-         x: { $lte: data.x +data.r},
-         y: { $lte: data.y +data.r},
-         x: { $gte: data.x -data.r},
-         y: { $gte: data.y -data.r},
+         x: { $lte: data.x +data.r,$gte: data.x -data.r},
+         y: { $lte: data.y +data.r, $gte: data.y -data.r},
        },
        { _id: false }
      )
@@ -33,11 +31,11 @@ Object.assign(module.exports, {
 
      let pixelsString=[]
      for (var i = 0; i < pixels.length; i++) {
-       pixelsString.push(`{"x":${pixels[i].x},"y":${pixels[i].y},"indexInFlag":${pixels[i].indexInFlag},"index":${pixels[i].index},"hexColor":"${pixels[i].hexColor}","author":"${pixels[i].author}"}`);
+       pixelsString.push(`{"x":${pixels[i].x},"y":${pixels[i].y},"indexInFlag":${pixels[i].indexInFlag},"index":${pixels[i].index},"hexColor":"${pixels[i].hexColor}","author":"${pixels[i].author}"${pixels[i].pseudo?`,"pseudo":${JSON.stringify(pixels[i].pseudo)}`:""}}`);
      }
      console.timeEnd()
 
-     return pixelsString.toString();
+     return `[${pixelsString.toString()}]`;
 
 
   },

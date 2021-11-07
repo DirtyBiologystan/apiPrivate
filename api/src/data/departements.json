@@ -122,7 +122,7 @@
   {
     "name": "Littoral Sud",
     "min": { "x": 241, "y": 121 },
-    "max": { "x": 289, "y": 150 },
+    "max": { "x": 290, "y": 150 },
     "discord": "https://discord.com/invite/a3CXhh9AuA"
   },
   {
@@ -140,7 +140,7 @@
   {
     "name": "Route du Sud",
     "min": { "x": 1, "y": 121 },
-    "max": { "x": 110, "y": 46 },
+    "max": { "x": 110, "y": 146 },
     "discord": "https://discord.com/invite/hHNhWFfcNp"
   },
   {
@@ -156,7 +156,7 @@
     "discord": "https://discord.com/invite/By6ZgesS"
   },
   {
-    "name": "Montagne du Centre",
+    "name": "Montagnes du Centre",
     "min": { "x": 156, "y": 121 },
     "max": { "x": 199, "y": 149 },
     "discord": "https://discord.com/invite/By6ZgesS"
@@ -218,7 +218,7 @@
   {
     "name": "Terre des Mirages",
     "min": { "x": 110, "y": 210 },
-    "max": { "x": 250, "y": 155 },
+    "max": { "x": 155, "y": 250 },
     "discord": "https://discord.com/invite/CWGYDR4E"
   },
   {
@@ -241,7 +241,7 @@
   },
   {
     "name": "Hautes Dunes",
-    "min": { "x": 197, "y": 211 },
+    "min": { "x": 197, "y": 210 },
     "max": { "x": 240, "y": 250 },
     "discord": "https://discord.com/invite/Ap23wcPqCa"
   },
@@ -258,7 +258,7 @@
     "discord": "https://discord.com/invite/SMCv7h8A"
   },
   {
-    "name": "Grande Clairiére",
+    "name": "Grande Clairière",
     "min": { "x": 431, "y": 51 },
     "max": { "x": 470, "y": 79 },
     "discord": "https://discord.com/invite/ndRanwMq"

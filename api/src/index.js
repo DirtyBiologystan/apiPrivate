@@ -110,7 +110,7 @@ const init = async () => {
               });
             }
           } catch (e) {
-            if(e.message="not found"){
+            if(e.message==="not found"){
               res.statusCode = 404;
               res.end();
             }else{

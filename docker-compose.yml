@@ -13,6 +13,8 @@ services:
     build: scrap/
     volumes:
       - ./scrap/:/application
+    ports:
+      - 3000:3000
     command: ["npm","run","dev"]
   sync:
     build: syncLastPseudo/

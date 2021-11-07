@@ -3,9 +3,10 @@ const mongooseReq = require("mongoose");
 const init = require("./function/init");
 const interval = require("./function/interval");
 const time = 5000;
+
 const tick = async (data) => {
   try {
-    setTimeout(tick.bind(undefined,   await interval(data)), time);
+    setTimeout(tick, time,await interval(data));
   } catch (e) {
     console.log(e)
   }
@@ -28,12 +29,6 @@ const tick = async (data) => {
     })
   );
   let data = await init(model);
-  console.log(data);
 
-  setTimeout(tick.bind(undefined, data), time);
-})();
-
-/*
-
-
-*/
+  setTimeout(tick, time,await interval(data));
+})().catch(console.error);

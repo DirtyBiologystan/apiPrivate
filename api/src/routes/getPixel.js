@@ -22,6 +22,9 @@ Object.assign(module.exports, {
     Joi.object({
       q: Joi.string().min(3).required(),
     }),
+    Joi.object({
+      pseudo: Joi.string().required(),
+    }),
     Joi.object({}),
   ),
 
@@ -49,6 +52,14 @@ Object.assign(module.exports, {
        .findOne(
          {
            index:data.index,
+         },
+         { _id: false }
+       )
+    }else if(data.pseudo){
+      pPixel = models["Pixels"]
+       .findOne(
+         {
+           pseudo:data.pseudo,
          },
          { _id: false }
        )

@@ -1,0 +1,21 @@
+{
+  "name": "syncredistomongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "prettier -w src/",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "predev": "npm i"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  }
+}

@@ -10,7 +10,7 @@ const roomTotal = io.to("total");
 module.exports = async ({ countPixel, lastIndexInFlag, date, model }) => {
   console.log("entri", { countPixel, lastIndexInFlag, date, model });
   let flagDatas = await flagAfter(date);
-  date = new Date().toISOString();
+  date = new Date(Date.now() - 1000).toISOString();
   if (!flagDatas.length) {
     console.log(date, "no data change");
     await redis.set("time", date);

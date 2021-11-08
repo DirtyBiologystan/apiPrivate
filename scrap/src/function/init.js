@@ -8,7 +8,7 @@ module.exports = async (model) => {
     let flagDatas;
 
     date = new Date().toISOString();
-    console.log(date,"init data")
+    console.log(date, "init data");
 
     flagDatas = await flag();
     const coordonne = calculAll(flagDatas.length, 0.5);

@@ -6,9 +6,9 @@ const time = 5000;
 
 const tick = async (data) => {
   try {
-    setTimeout(tick, time,await interval(data));
+    setTimeout(tick, time, await interval(data));
   } catch (e) {
-    console.log(e)
+    console.log(e);
   }
 };
 
@@ -30,5 +30,5 @@ const tick = async (data) => {
   );
   let data = await init(model);
 
-  setTimeout(tick, time,await interval(data));
+  setTimeout(tick, time, await interval(data));
 })().catch(console.error);

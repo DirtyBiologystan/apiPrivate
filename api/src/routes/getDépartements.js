@@ -5,7 +5,7 @@ Object.assign(module.exports, {
   method: "GET",
   handler: async (url, data) => {
     let départements;
-    if(data.x && data.y ){
+    if (data.x && data.y) {
       départements = await models["Departements"].find(
         {
           "min.x": { $lte: data.x },
@@ -15,11 +15,17 @@ Object.assign(module.exports, {
         },
         { name: true, region: true, _id: false, discord: true }
       );
-    }else{
+    } else {
       départements = await models["Departements"].find(
+        {},
         {
-        },
-        { name: true, region: true,max:true,min:true ,_id: false, discord: true }
+          name: true,
+          region: true,
+          max: true,
+          min: true,
+          _id: false,
+          discord: true,
+        }
       );
     }
 

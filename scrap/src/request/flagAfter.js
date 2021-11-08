@@ -2,7 +2,7 @@ const https = require("https");
 
 module.exports = async (date) =>
   new Promise((resolve, reject) => {
-    console.log(`https://api-flag.fouloscopie.com/flag/after/${date}`)
+    console.log(`https://api-flag.fouloscopie.com/flag/after/${date}`);
     https.get(
       `https://api-flag.fouloscopie.com/flag/after/${date}`,
       (reqToFoulo) => {

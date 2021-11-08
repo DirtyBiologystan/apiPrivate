@@ -8,16 +8,15 @@ const io = require("socket.io")({
 io.listen(3000);
 
 io.on("connection", (socket) => {
-  socket.on("newPixel",()=>{
+  socket.on("newPixel", () => {
     socket.join("newPixel");
   });
-  socket.on("changePixel",()=>{
+  socket.on("changePixel", () => {
     socket.join("changePixel");
   });
-  socket.on("total",()=>{
+  socket.on("total", () => {
     socket.join("total");
   });
 });
 
-
-module.exports= io;
+module.exports = io;

@@ -30,7 +30,8 @@ Object.assign(module.exports, {
 
   handler: async (url, data) => {
     let pPixel;
-    if (data.x & data.y) {
+    if (data.x && data.y) {
+
       pPixel = models["Pixels"].findOne(
         {
           x: data.x,

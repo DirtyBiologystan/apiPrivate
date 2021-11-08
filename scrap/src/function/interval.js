@@ -39,13 +39,16 @@ module.exports = async ({ countPixel, lastIndexInFlag, date, model }) => {
       }
       const sockets = await roomNewPixel.allSockets();
       if (!sockets.length) {
-        roomNewPixel.emit(
-          "changePixel",
-          await model.findOne(
-            { indexInFlag: flagData.indexInFlag },
-            { _id: false }
-          )
+        const pixel = await model.findOne(
+          { indexInFlag: flagData.indexInFlag },
+          { _id: false }
         );
+        if (flagData.hexColor !== pixel.hexColor) {
+          roomNewPixel.emit("changePixel", {
+            ...pixel.toObject(),
+            hexColor: flagData.hexColor,
+          });
+        }
       }
       return {
         updateOne: {

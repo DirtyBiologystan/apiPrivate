@@ -12,18 +12,28 @@ module.exports = async (model) => {
 
     flagDatas = await flag();
     const coordonne = calculAll(flagDatas.length, 0.5);
-    await model.bulkWrite(
+
+    const bulk = await model.bulkWrite(
       flagDatas.map((flagData, i) => ({
-        insertOne: {
-          document: {
-            ...flagData,
-            ...coordonne[i],
-            index: i,
+        updateOne: {
+          upsert: true,
+          filter: {
+            indexInFlag: flagData.indexInFlag,
+          },
+          update: {
+            $set: {
+              ...flagData,
+              ...coordonne[i],
+              index: i,
+            },
           },
         },
       }))
     );
+
     await redis.set("time", date);
+    console.log(bulk);
+
     return {
       countPixel: flagDatas.length,
       lastIndexInFlag: flagDatas[flagDatas.length - 1].indexInFlag,

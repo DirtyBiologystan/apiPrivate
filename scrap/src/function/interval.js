@@ -47,6 +47,7 @@ module.exports = async ({ countPixel, lastIndexInFlag, date, model }) => {
           roomNewPixel.emit("changePixel", {
             ...pixel.toObject(),
             hexColor: flagData.hexColor,
+            oldHexColor: pixel.hexColor,
           });
         }
       }

@@ -1,0 +1,213 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "⚠️ Le navigateur a du mal a supporté trop de data, récupére une grand quantité de pixels avec cette doc risque de faire planté votre navigateur",
+    "version": "0.0.1",
+    "title": "Private api",
+    "contact": {
+      "email": "codatitiss@gmail.com"
+    }
+  },
+  "host": "api.codati.ovh",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "pixels",
+      "description": "Get un ou des pixels"
+    },
+    {
+      "name": "pixels/zone",
+      "description": "Get les pixels d'une zone du drapeau"
+    },
+    {
+      "name": "departements",
+      "description": "get des département"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/pixels/": {
+      "get": {
+        "tags": [
+          "pixels"
+        ],
+        "summary": "get Pixel",
+        "description": "Récupére tout les pixels sans paramétre, sinon, récupére uniquement un pixel",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X du pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y du pixel",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "indexInFlag",
+            "in": "query",
+            "description": "indexInFlag du pixel",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "index",
+            "in": "index",
+            "description": "index du pixel",
+            "required": false,
+            "type": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description":"get data"
+          },
+          "404": {
+            "description":"not found"
+          }
+        }
+      }
+    },
+    "/pixels/zone/": {
+      "get": {
+        "tags": [
+          "pixels/zone"
+        ],
+        "summary": "Add a new pet to the store",
+        "description": "récupére les pixels d'une zone la zone peut étre un département, un rectangle défini par min et max, un carré définin par son centre et la distance du centre aux bort",
+        "operationId": "pixels/zone",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X de la zone pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y de la zone pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "r",
+            "in": "query",
+            "description": "rayon",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "departement",
+            "in": "query",
+            "description": "departement des pixels",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "minx",
+            "in": "query",
+            "description": "minx des pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "miny",
+            "in": "query",
+            "description": "miny des pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "maxx",
+            "in": "query",
+            "description": "minx des pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "maxy",
+            "in": "query",
+            "description": "maxy des pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description":"get data"
+          },
+          "404": {
+            "description":"not found"
+          }
+        }
+      }
+    },
+    "/departements/": {
+      "get": {
+        "tags": [
+          "departements"
+        ],
+        "summary": "récupére un ou des departements",
+        "description": "/!\\ Le navigateur a du mal a supporté trop de data, récupére une grand quantité de data avec cette doc risque de faire planté votre navigateur",
+        "operationId": "departements",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X de la zone pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y de la zone pixel",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description":"get data"
+          },
+          "404": {
+            "description":"not found"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Siteweb codati.ovh",
+    "url": "https://codati.ovh/"
+  }
+}

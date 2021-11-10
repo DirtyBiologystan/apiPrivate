@@ -14,16 +14,23 @@ services:
     volumes:
       - ./scrap/:/application
     ports:
-      - 3000:3000
+      - 8001:3000
     command: ["npm","run","dev"]
   sync:
     build: syncLastPseudo/
     volumes:
       - ./syncLastPseudo/:/application
     command: ["npm","run","dev"]
+  statusbot:
+    build: statusBot/
+    volumes:
+      - ./statusBot/:/application
+    command: ["npm","run","dev"]
+    environment:
+      - TOKEN=$TOKEN
   redis:
     image: redis
   mongo:
     image: mongo
     ports:
-      - 27017:27017
+      - 27018:27017

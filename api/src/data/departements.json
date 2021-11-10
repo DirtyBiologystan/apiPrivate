@@ -27,7 +27,7 @@
     "name": "Crash Sud",
     "min": { "x": 111, "y": 80 },
     "max": { "x": 155, "y": 100 },
-    "discord": "https://discord.com/invite/rk87qgRd"
+    "discord": "https://discord.gg/wNSfxe7UVk"
   },
   {
     "name": "Crash Central",
@@ -39,7 +39,7 @@
     "name": "Terre du milieu",
     "min": { "x": 156, "y": 80 },
     "max": { "x": 196, "y": 100 },
-    "discord": "https://discord.com/invite/rk87qgRd"
+    "discord": "https://discord.gg/AuJMwMhXdw"
   },
   {
     "name": "Crash Longiforme",
@@ -75,25 +75,25 @@
     "name": "Route de la résolution",
     "min": { "x": 1, "y": 101 },
     "max": { "x": 100, "y": 120 },
-    "discord": "https://discord.com/invite/jzbXM7cD"
+    "discord": "https://discord.gg/m8ucYJWF"
   },
   {
     "name": "Plateau ouest",
     "min": { "x": 101, "y": 101 },
     "max": { "x": 148, "y": 120 },
-    "discord": "https://discord.com/invite/jzbXM7cD"
+    "discord": "https://discord.gg/m8ucYJWF"
   },
   {
     "name": "Plateau central",
     "min": { "x": 149, "y": 101 },
     "max": { "x": 193, "y": 120 },
-    "discord": "https://discord.com/invite/jzbXM7cD"
+    "discord": "https://discord.gg/m8ucYJWF"
   },
   {
     "name": "Plateau est",
     "min": { "x": 194, "y": 101 },
     "max": { "x": 240, "y": 120 },
-    "discord": "https://discord.com/invite/jzbXM7cD"
+    "discord": "https://discord.gg/m8ucYJWF"
   },
   {
     "name": "Plages",
@@ -129,7 +129,7 @@
     "name": "Littoral Nord",
     "min": { "x": 241, "y": 1 },
     "max": { "x": 290, "y": 50 },
-    "discord": "https://discord.com/invite/aCNxJH42"
+    "discord": "https://discord.gg/b9NFeasYbw"
   },
   {
     "name": "Mer du Nord",
@@ -153,37 +153,37 @@
     "name": "Montagne de l'Ouest",
     "min": { "x": 101, "y": 121 },
     "max": { "x": 155, "y": 149 },
-    "discord": "https://discord.com/invite/By6ZgesS"
+    "discord": "https://discord.gg/smQeveCnbD"
   },
   {
     "name": "Montagnes du Centre",
     "min": { "x": 156, "y": 121 },
     "max": { "x": 199, "y": 149 },
-    "discord": "https://discord.com/invite/By6ZgesS"
+    "discord": "https://discord.gg/smQeveCnbD"
   },
   {
     "name": "Montagne de l'Est",
     "min": { "x": 200, "y": 121 },
     "max": { "x": 240, "y": 149 },
-    "discord": "https://discord.com/invite/By6ZgesS"
+    "discord": "https://discord.gg/smQeveCnbD"
   },
   {
     "name": "Désert de l'Ouest",
     "min": { "x": 101, "y": 150 },
     "max": { "x": 155, "y": 209 },
-    "discord": "https://discord.com/invite/rt4nT4ZD"
+    "discord": "https://discord.gg/WzWKYHQC"
   },
   {
     "name": "Désert de l'Est",
     "min": { "x": 200, "y": 150 },
     "max": { "x": 240, "y": 209 },
-    "discord": "https://discord.com/invite/QyavyG9V"
+    "discord": "https://discord.gg/4PYUJ9pwBU"
   },
   {
     "name": "Désert Central",
     "min": { "x": 156, "y": 150 },
     "max": { "x": 199, "y": 209 },
-    "discord": "https://discord.com/invite/dqZfmbkb"
+    "discord": "https://discord.gg/rmNybTp9nw"
   },
   {
     "name": "Oasis",
@@ -195,7 +195,7 @@
     "name": "Salins",
     "min": { "x": 291, "y": 120 },
     "max": { "x": 430, "y": 146 },
-    "discord": "https://discord.com/invite/dQuW9prH"
+    "discord": "https://discord.gg/3SU752RxQy"
   },
   {
     "name": "Terres Fertiles",
@@ -207,13 +207,13 @@
     "name": "Fôret Abyssale",
     "min": { "x": 331, "y": 1 },
     "max": { "x": 430, "y": 119 },
-    "discord": "https://discord.com/invite/9gkFxMKe"
+    "discord": "https://discord.gg/bt9C96jM"
   },
   {
     "name": "Volcan",
     "min": { "x": 291, "y": 147 },
     "max": { "x": 430, "y": 210 },
-    "discord": "https://discord.com/invite/dXket8cD"
+    "discord": "https://discord.gg/WFWzVnCVZY"
   },
   {
     "name": "Terre des Mirages",
@@ -237,7 +237,7 @@
     "name": "Lac écarlate",
     "min": { "x": 431, "y": 121 },
     "max": { "x": 510, "y": 250 },
-    "discord": "https://discord.com/invite/hJSCRHUp"
+    "discord": "https://discord.gg/Uw6B92hutb"
   },
   {
     "name": "Hautes Dunes",
@@ -273,6 +273,6 @@
     "name": "Mer Kraken Rosalie",
     "min": { "x": 290, "y": 45 },
     "max": { "x": 330, "y": 79 },
-    "discord": "https://discord.com/invite/6JamRuD4"
+    "discord": "https://discord.gg/fYdaEEej4M"
   }
 ]

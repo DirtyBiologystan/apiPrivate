@@ -9,7 +9,7 @@ module.exports = async (mongoose) => {
     new Schema({
       name: String,
       region: String,
-      region_discord: String,
+      regionDiscord: String,
       discord: String,
       min: {
         x: { type: Number, index: true },
@@ -36,7 +36,7 @@ module.exports = async (mongoose) => {
         return new model({
           ...departement,
           region: region.name,
-          region_discord: region.discord,
+          regionDiscord: region.discord,
         }).save();
       })
     );

@@ -18,7 +18,7 @@
     "discord": "https://discord.gg/uUnEsPNa"
   },
   {
-    "name": "Crash du Nord",
+    "name": "Crash Nord",
     "min": { "x": 111, "y": 1 },
     "max": { "x": 155, "y": 50 },
     "discord": "https://discord.gg/MyC8QqKp"
@@ -54,19 +54,19 @@
     "discord": "https://discord.gg/urN2axXpnw"
   },
   {
-    "name": "Vallé du Nord",
+    "name": "Vallée du Nord",
     "min": { "x": 197, "y": 1 },
     "max": { "x": 240, "y": 50 },
     "discord": "https://discord.com/invite/nGEG9nPj5S"
   },
   {
-    "name": "Vallé du Sud",
+    "name": "Vallée du Sud ",
     "min": { "x": 197, "y": 80 },
     "max": { "x": 240, "y": 100 },
     "discord": "https://discord.com/invite/nGEG9nPj5S"
   },
   {
-    "name": "Vallé Central",
+    "name": "Vallée Centrale",
     "min": { "x": 197, "y": 51 },
     "max": { "x": 240, "y": 79 },
     "discord": "https://discord.com/invite/nGEG9nPj5S"
@@ -98,7 +98,7 @@
   {
     "name": "Plages",
     "min": { "x": 241, "y": 101 },
-    "max": { "x": 290, "y": 120 },
+    "max": { "x": 335, "y": 120 },
     "discord": "https://discord.com/invite/a3CXhh9AuA"
   },
   {
@@ -116,7 +116,7 @@
   {
     "name": "Abîmes",
     "min": { "x": 241, "y": 80 },
-    "max": { "x": 335, "y": 104 },
+    "max": { "x": 335, "y": 100 },
     "discord": "https://discord.com/invite/HHZDURDq"
   },
   {
@@ -138,31 +138,19 @@
     "discord": "https://discord.com/invite/eEJwPY7rPb"
   },
   {
-    "name": "Route du Sud",
-    "min": { "x": 1, "y": 121 },
-    "max": { "x": 110, "y": 146 },
-    "discord": "https://discord.com/invite/hHNhWFfcNp"
-  },
-  {
-    "name": "Route de la Retrouvaille",
-    "min": { "x": 1, "y": 147 },
-    "max": { "x": 100, "y": 210 },
-    "discord": "https://discord.com/invite/hHNhWFfcNp"
-  },
-  {
-    "name": "Montagne de l'Ouest",
+    "name": "Montagnes de l'Ouest",
     "min": { "x": 101, "y": 121 },
     "max": { "x": 155, "y": 149 },
     "discord": "https://discord.gg/smQeveCnbD"
   },
   {
-    "name": "Montagnes du Centre",
+    "name": "Montagnes Centrales",
     "min": { "x": 156, "y": 121 },
     "max": { "x": 199, "y": 149 },
     "discord": "https://discord.gg/smQeveCnbD"
   },
   {
-    "name": "Montagne de l'Est",
+    "name": "Montagnes de l'Est",
     "min": { "x": 200, "y": 121 },
     "max": { "x": 240, "y": 149 },
     "discord": "https://discord.gg/smQeveCnbD"
@@ -204,7 +192,7 @@
     "discord": "https://discord.com/invite/wpAUcCKk6a"
   },
   {
-    "name": "Fôret Abyssale",
+    "name": "Forêt Abyssale",
     "min": { "x": 331, "y": 1 },
     "max": { "x": 430, "y": 119 },
     "discord": "https://discord.gg/bt9C96jM"
@@ -217,7 +205,7 @@
   },
   {
     "name": "Terre des Mirages",
-    "min": { "x": 110, "y": 210 },
+    "min": { "x": 111, "y": 210 },
     "max": { "x": 155, "y": 250 },
     "discord": "https://discord.com/invite/CWGYDR4E"
   },
@@ -274,5 +262,11 @@
     "min": { "x": 290, "y": 45 },
     "max": { "x": 330, "y": 79 },
     "discord": "https://discord.gg/fYdaEEej4M"
+  },
+  {
+    "name": "Grand Sud",
+    "min": { "x": 1, "y": 121 },
+    "max": { "x": 100, "y": 210 },
+    "discord": "https://discord.gg/q2BtFR6r2k"
   }
 ]

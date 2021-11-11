@@ -7,19 +7,15 @@
       "Crash Est",
       "Crash Nord",
       "Crash Sud",
-      "Crash Centre",
-      "Terre du milieu",
+      "Crash Central",
+      "Terre du Milieu",
       "Crash Longiforme",
       "Crash Vide"
     ]
   },
   {
     "name": "V.I.E",
-    "départements": ["Vallé du Nord", "Vallé du Sud", "Vallé Centrale"]
-  },
-  {
-    "name": "Grand Sud",
-    "départements": ["Route du Sud", "Route de la Retrouvaille"]
+    "départements": ["Vallée du Nord", "Vallée du Sud", "Vallée Centrale"]
   },
   {
     "name": "Plateaux de la Résolution",
@@ -36,13 +32,9 @@
     "départements": [
       "Plages",
       "Falaises",
-      "Plages",
-      "Mer du Sud",
       "Abîmes",
       "Littoral Sud",
-      "Côte Centrale",
-      "Littoral Nord",
-      "Mer du Nord"
+      "Littoral Nord"
     ]
   },
   {

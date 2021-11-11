@@ -176,7 +176,7 @@
           "departements"
         ],
         "summary": "récupére un ou des departements",
-        "description": "Sans paramétre récupére tout les départements, avec récupére le département du pixel X:Y",
+        "description": "Sans paramétre récupére tout les départements, avec récupére les départements du pixel X:Y (des départements se chevoche, donc plussieur département peuveux étre récupére)",
         "operationId": "departements",
         "consumes": [
           "application/json"
@@ -188,7 +188,7 @@
           {
             "name": "x",
             "in": "query",
-            "description": "X de la zone pixel",
+            "description": "X dont on veux récupére les déparetements",
             "required": false,
             "type": "integer",
             "format": "int64"
@@ -196,10 +196,17 @@
           {
             "name": "y",
             "in": "query",
-            "description": "Y de la zone pixel",
+            "description": "Y dont on veux récupére les déparetements",
             "required": false,
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "name": "name",
+            "in":"query",
+            "description": "name du département que l'on veux récupére",
+            "required": false,
+            "type": "string",
           }
         ],
         "responses": {

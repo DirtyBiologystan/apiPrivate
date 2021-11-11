@@ -16,12 +16,12 @@
       "description": "Get un ou des pixels"
     },
     {
-      "name": "pixels/zone",
-      "description": "Get les pixels d'une zone du drapeau"
-    },
-    {
       "name": "departements",
       "description": "get des département"
+    },
+    {
+      "name": "status",
+      "description": "test l'api"
     }
   ],
   "schemes": [
@@ -66,18 +66,18 @@
           },
           {
             "name": "index",
-            "in": "index",
+            "in": "query",
             "description": "index du pixel",
-            "required": false,
-            "type": "int64"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
           "200": {
-            "description":"get data"
+            "description": "get data"
           },
           "404": {
-            "description":"not found"
+            "description": "not found"
           }
         }
       }
@@ -85,13 +85,17 @@
     "/pixels/zone/": {
       "get": {
         "tags": [
-          "pixels/zone"
+          "pixels"
         ],
         "summary": "Récupére les pixels d'une zone",
         "description": "récupére les pixels d'une zone la zone peut étre un département, un rectangle défini par min et max, un carré définin par son centre et la distance du centre aux bort",
         "operationId": "pixels/zone",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "x",
@@ -114,8 +118,7 @@
             "in": "query",
             "description": "rayon",
             "required": false,
-            "type": "integer",
-            "format": "int64"
+            "type": "integer"
           },
           {
             "name": "departement",
@@ -159,10 +162,10 @@
         ],
         "responses": {
           "200": {
-            "description":"get data"
+            "description": "get data"
           },
           "404": {
-            "description":"not found"
+            "description": "not found"
           }
         }
       }
@@ -173,10 +176,14 @@
           "departements"
         ],
         "summary": "récupére un ou des departements",
-        "description": "/!\\ Le navigateur a du mal a supporté trop de data, récupére une grand quantité de data avec cette doc risque de faire planté votre navigateur",
+        "description": "Sans paramétre récupére tout les départements, avec récupére le département du pixel X:Y",
         "operationId": "departements",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "x",
@@ -197,10 +204,42 @@
         ],
         "responses": {
           "200": {
-            "description":"get data"
+            "description": "get data"
           },
           "404": {
-            "description":"not found"
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Test le bon fonctionnement de l'api",
+        "description": "Test le bon fonctionnement interne de l'api",
+        "operationId": "status",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "get data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mongodb": {
+                  "type": "boolean",
+                  "description": "test if mongo is up"
+                },
+                "redis": {
+                  "type": "boolean",
+                  "description": "test if redis is up"
+                }
+              }
+            }
           }
         }
       }

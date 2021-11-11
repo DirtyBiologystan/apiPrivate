@@ -5,13 +5,13 @@ const redis = require("../services/redis");
 const models = require("../services/models");
 const { handler: getDépartements } = require("./getDépartements");
 const { handler: getUser } = require("./getUser");
+const typeReturn = require("../constante/typeReturn");
 
 Object.assign(module.exports, {
   regex: /^\/pixels\/zone\/$/,
   method: "GET",
-  returnString: true,
-  schema:
-  Joi.alternatives().try(
+  typeReturn: typeReturn.STRING,
+  schema: Joi.alternatives().try(
     Joi.object({
       x: Joi.number().integer().positive().required(),
       y: Joi.number().integer().positive().required(),
@@ -29,37 +29,38 @@ Object.assign(module.exports, {
   ),
 
   handler: async (url, data) => {
-    let pixels
-    if(data.x && data.y)
-    {
+    let pixels;
+    if (data.x && data.y) {
       pixels = await models["Pixels"].find(
         {
-          x: {  $gte: data.x - data.r,$lte: data.x + data.r},
-          y: {  $gte: data.y - data.r,$lte: data.y + data.r },
+          x: { $gte: data.x - data.r, $lte: data.x + data.r },
+          y: { $gte: data.y - data.r, $lte: data.y + data.r },
         },
         { _id: false }
       );
-    }else if(data.minx && data.miny && data.maxx && data.maxy )
-    {
+    } else if (data.minx && data.miny && data.maxx && data.maxy) {
       pixels = await models["Pixels"].find(
         {
           x: { $gte: data.minx, $lte: data.maxx },
-          y: { $gte: data.miny, $lte: data.maxy},
+          y: { $gte: data.miny, $lte: data.maxy },
         },
         { _id: false }
       );
-    }else if(data.departement){
-      const [departement] =await models["Departements"].find({name:data.departement},{min:true,max:true, _id: false});
-      if(!departement){
+    } else if (data.departement) {
+      const [departement] = await models["Departements"].find(
+        { name: data.departement },
+        { min: true, max: true, _id: false }
+      );
+      if (!departement) {
         throw Error("not found");
         return;
       }
 
-      console.log(departement)
-      pixels=await models["Pixels"].find(
+      console.log(departement);
+      pixels = await models["Pixels"].find(
         {
-          x: { $gte: departement.min.x, $lte: departement.max.x},
-          y: { $gte: departement.min.y, $lte: departement.max.y},
+          x: { $gte: departement.min.x, $lte: departement.max.x },
+          y: { $gte: departement.min.y, $lte: departement.max.y },
         },
         { _id: false }
       );

@@ -1,10 +1,11 @@
 const redis = require("../services/redis");
 const https = require("https");
+const typeReturn = require("../constante/typeReturn");
 
 Object.assign(module.exports, {
   regex: /^\/users\/(\w{8}-\w{4}-\w{4}-\w{4}-\w{12})$/,
   method: "GET",
-  returnString: true,
+  typeReturn: typeReturn.STRING,
   handler: async (url) => {
     const uuid = url[1];
     const user = await redis.get(uuid);

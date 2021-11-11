@@ -1,8 +1,10 @@
 const models = require("../services/models");
+const typeReturn = require("../constante/typeReturn");
 
 Object.assign(module.exports, {
   regex: /^\/departements\/$/,
   method: "GET",
+  typeReturn: typeReturn.OBJECT,
   handler: async (url, data) => {
     let départements;
     if (data.x && data.y) {

@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs/promises");
 const models = require("./services/models");
 const mongoose = require("./services/mongoose");
+const typeReturn = require("./constante/typeReturn");
 
 const init = async () => {
   const mongooseInstance = await mongoose();
@@ -67,11 +68,16 @@ const init = async () => {
                 console.log(value);
                 params = value;
               }
-              res.end(
-                route.returnString
-                  ? await route.handler(dataInUrl, params)
-                  : JSON.stringify(await route.handler(dataInUrl, params))
-              );
+              if (route.typeReturn === typeReturn.STREAM) {
+                const stream = await route.handler(dataInUrl, params);
+                stream.pipe(res);
+              } else {
+                res.end(
+                  route.typeReturn === typeReturn.STRING
+                    ? await route.handler(dataInUrl, params)
+                    : JSON.stringify(await route.handler(dataInUrl, params))
+                );
+              }
             } else {
               await new Promise((resolve, reject) => {
                 let rawData = "";

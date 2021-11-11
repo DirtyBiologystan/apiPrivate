@@ -1,10 +1,11 @@
 const models = require("../services/models");
 const Joi = require("joi");
+const typeReturn = require("../constante/typeReturn");
 
 Object.assign(module.exports, {
   regex: /^\/users\/discord$/,
   method: "POST",
-  returnString: true,
+  typeReturn: typeReturn.STRING,
   schema: Joi.object({
     pseudo: Joi.string().required(),
     x: Joi.number().integer().positive().required(),

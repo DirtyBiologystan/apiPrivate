@@ -4,10 +4,13 @@ const Joi = require("joi");
 const redis = require("../services/redis");
 const models = require("../services/models");
 const { handler: getDépartements } = require("./getDépartements");
+const { pixelDépartementsToJSON, pixelToJSON } = require("../services/convert");
+const typeReturn = require("../constante/typeReturn");
 
 Object.assign(module.exports, {
   regex: /^\/pixels\/$/,
   method: "GET",
+  typeReturn: typeReturn.STRING,
   schema: Joi.alternatives().try(
     Joi.object({
       x: Joi.number().integer().positive().required(),
@@ -27,11 +30,9 @@ Object.assign(module.exports, {
     }),
     Joi.object({})
   ),
-
   handler: async (url, data) => {
     let pPixel;
     if (data.x && data.y) {
-
       pPixel = models["Pixels"].findOne(
         {
           x: data.x,
@@ -62,24 +63,25 @@ Object.assign(module.exports, {
       );
     } else if (data.q) {
       const q = data.q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      pPixel = models["Pixels"].find(
+      let pixel = await models["Pixels"].find(
         {
           pseudo: { $regex: q, $options: "i" },
         },
         { _id: false }
       );
-      return pPixel;
+      console.log(pixel);
+      return `[${pixel.map(pixelToJSON).toString()}]`;
     } else {
-      pPixel = models["Pixels"].find({}, { _id: false });
-      return pPixel;
+      let pixel = await models["Pixels"].find({}, { _id: false });
+      return `[${pixel.map(pixelToJSON).toString()}]`;
     }
     const pixel = await pPixel;
     if (pixel) {
       const pDépartement = getDépartements(null, pixel);
-      return {
+      return pixelDépartementsToJSON({
         ...pixel.toObject(),
         departements: await pDépartement,
-      };
+      });
     } else {
       throw Error("not found");
     }

@@ -21,13 +21,13 @@ services:
     volumes:
       - ./syncLastPseudo/:/application
     command: ["npm","run","dev"]
-  statusbot:
-    build: statusBot/
-    volumes:
-      - ./statusBot/:/application
-    command: ["npm","run","dev"]
-    environment:
-      - TOKEN=$TOKEN
+  # statusbot:
+  #   build: statusBot/
+  #   volumes:
+  #     - ./statusBot/:/application
+  #   command: ["npm","run","dev"]
+  #   environment:
+  #     - TOKEN=$TOKEN
   redis:
     image: redis
   mongo:

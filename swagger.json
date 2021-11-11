@@ -87,7 +87,7 @@
         "tags": [
           "pixels/zone"
         ],
-        "summary": "Add a new pet to the store",
+        "summary": "Récupére les pixels d'une zone",
         "description": "récupére les pixels d'une zone la zone peut étre un département, un rectangle défini par min et max, un carré définin par son centre et la distance du centre aux bort",
         "operationId": "pixels/zone",
         "consumes": ["application/json"],

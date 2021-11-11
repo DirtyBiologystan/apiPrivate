@@ -31,9 +31,13 @@ module.exports = async (mongoose) => {
           return region.départements.indexOf(departement.name) !== -1;
         });
         if (!region) {
-          region = { name: departement.name, };
+          region = { name: departement.name };
         }
-        return new model({ ...departement, region: region.name ,region_discord:region.discord}).save();
+        return new model({
+          ...departement,
+          region: region.name,
+          region_discord: region.discord,
+        }).save();
       })
     );
   }

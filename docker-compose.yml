@@ -9,6 +9,11 @@ services:
     ports:
       - 8000:8000
     command: ["npm","run","dev"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/status"]
+      retries: 1
+      interval: 10s
+      timeout: 5s
   scrap:
     build: scrap/
     volumes:

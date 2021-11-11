@@ -15,5 +15,6 @@ RUN npm i --production
 
 COPY --chown=node:node ./src/ /application/src/
 
+HEALTHCHECK CMD curl -f https://localhost:8000/status
 
 CMD ["npm","run","start"]

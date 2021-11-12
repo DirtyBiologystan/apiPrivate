@@ -14,7 +14,7 @@ Object.assign(module.exports, {
     } else {
       return new Promise((resolve, reject) => {
         https.get(
-          `https://admin.fouloscopie.com/users/${uuid}`,
+          `${process.env.URL_GET_USER}${uuid}`,
           (reqToFoulo) => {
             reqToFoulo.setEncoding("utf8");
             reqToFoulo.on("error", (err) => {

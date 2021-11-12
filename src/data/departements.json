@@ -274,5 +274,11 @@
     "min": { "x":471 ,"y":1},
     "max": {"x":510, "y":50},
     "discord": "https://discord.gg/xgSUZXRVU2"
+  },
+  {
+    "name": "Eaux de Givrétoile",
+    "min": { "x":471 ,"y":51},
+    "max": {"x":510, "y":79},
+    "discord": "https://discord.gg/pqSMf2JVec"
   }
 ]

@@ -176,7 +176,7 @@
           "departements"
         ],
         "summary": "récupére un ou des departements",
-        "description": "Sans paramétre récupére tout les départements, avec récupére les départements du pixel X:Y (des départements se chevoche, donc plussieur département peuveux étre récupére)",
+        "description": "Sans paramétre récupére tout les départements, avec récupére les départements du pixel X:Y (des départements se chevoche, donc plussieur département peuveux étre récupére), https://docs.google.com/drawings/d/1wGOcI49YoN9x1R7fH5uomZ-kZ-TQ0yZTWasjsi0DAE8 lien du schema de fonctionnement de l'api",
         "operationId": "departements",
         "consumes": [
           "application/json"

@@ -16,6 +16,8 @@ Object.assign(module.exports, {
     console.log(models.Users);
     const user = new models.Users(data);
     await user.save();
+    const datas = await model.find({ pseudo: { $exists: false } });
+
     return '{"status":"ok"}';
   },
 });

@@ -11,6 +11,12 @@ module.exports = (mongoose) => {
       hexColor: { type: String, index: true },
       author: { type: String, index: true },
       pseudo: { type: String, index: true },
+      discord:{
+        pseudo: { type: String, index: true },
+        idDiscord: { type: Number, index: { unique: true } },
+        x: { type: Number, index: true },
+        y: { type: Number, index: true },
+      }
     })
   );
 };

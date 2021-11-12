@@ -3,9 +3,9 @@ version: '3.2'
 services:
 
   back:
-    build: api/
+    build: .
     volumes:
-      -  ./api/:/application
+      -  ./:/application
     ports:
       - 8000:8000
     command: ["npm","run","dev"]
@@ -14,18 +14,18 @@ services:
       retries: 1
       interval: 10s
       timeout: 5s
+    environment:
+      - URL_GET_USER=$URL_GET_USER
   scrap:
-    build: scrap/
-    volumes:
-      - ./scrap/:/application
+    image: registry.gitlab.com/dirtybiologystan/api/scrap:main
     ports:
       - 8001:3000
     command: ["npm","run","dev"]
-  sync:
-    build: syncLastPseudo/
-    volumes:
-      - ./syncLastPseudo/:/application
-    command: ["npm","run","dev"]
+  # sync:
+  #   build: syncLastPseudo/
+  #   volumes:
+  #     - ./syncLastPseudo/:/application
+  #   command: ["npm","run","dev"]
   # statusbot:
   #   build: statusBot/
   #   volumes:

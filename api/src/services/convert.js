@@ -10,5 +10,6 @@ Object.assign(module.exports, {
       pixel.indexInFlag
     },"index":${pixel.index},"hexColor":"${pixel.hexColor}","author":"${
       pixel.author
-    }"${pixel.pseudo ? `,"pseudo":${JSON.stringify(pixel.pseudo)}` : ""}}`,
+    }"${pixel.pseudo ? `,"pseudo":${JSON.stringify(pixel.pseudo)}` : ""},
+     "departements":${JSON.stringify(pixel.departements)}}`,
 });

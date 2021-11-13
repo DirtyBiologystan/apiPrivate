@@ -20,7 +20,6 @@ services:
     image: registry.gitlab.com/dirtybiologystan/api/scrap:main
     ports:
       - 8001:3000
-    command: ["npm","run","dev"]
     environment:
       - URL_FLAG=$URL_FLAG
   # sync:

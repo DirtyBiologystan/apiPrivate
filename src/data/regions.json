@@ -29,8 +29,8 @@
     ]
   },
   {
-    "discord": "https://discord.gg/78K78mW8nh",
     "name": "Ocean Thétis",
+    "discord": "https://discord.gg/78K78mW8nh",
     "départements": [
       "Plages",
       "Falaises",
@@ -41,6 +41,7 @@
   },
   {
     "name": "La Méridionale",
+    "discord": "https://discord.gg/DNekvMPC84",
     "départements": [
       "Montagnes de l'Ouest",
       "Montagnes Centrales",

@@ -14,8 +14,6 @@ module.exports = async (mongoose) => {
       discord: {
         pseudo: { type: String, index: true },
         idDiscord: { type: Number, index: { unique: true, sparse: true } },
-        x: { type: Number, index: true },
-        y: { type: Number, index: true },
       },
     })
   );

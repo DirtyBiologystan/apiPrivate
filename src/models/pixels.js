@@ -1,7 +1,7 @@
-module.exports = (mongoose) => {
+module.exports = async (mongoose) => {
   const Schema = mongoose.Schema;
 
-  return mongoose.model(
+  const model = mongoose.model(
     "Pixels",
     new Schema({
       x: { type: Number, index: true },
@@ -11,12 +11,14 @@ module.exports = (mongoose) => {
       hexColor: { type: String, index: true },
       author: { type: String, index: true },
       pseudo: { type: String, index: true },
-      discord:{
+      discord: {
         pseudo: { type: String, index: true },
-        idDiscord: { type: Number, index: { unique: true } },
+        idDiscord: { type: Number, index: { unique: true, sparse: true } },
         x: { type: Number, index: true },
         y: { type: Number, index: true },
-      }
+      },
     })
   );
+  await model.syncIndexes();
+  return model;
 };

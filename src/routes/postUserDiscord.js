@@ -18,6 +18,8 @@ Object.assign(module.exports, {
     await user.save();
     const datas = await model.find({ pseudo: { $exists: false } });
 
+    const pixel = await models.Pixels.findOne({x:data.x,y:data.y});
+    pixel.discord={pseudo:data.pseudo,idDiscord:data.idDiscord}
     return '{"status":"ok"}';
   },
 });

@@ -13,14 +13,14 @@ Object.assign(module.exports, {
     idDiscord: Joi.string().required(),
   }),
   handler: async (url, data) => {
-    const pixel = await models.Pixels.findOne({x:data.x,y:data.y});
-    if(!pixel){
+    const pixel = await models.Pixels.findOne({ x: data.x, y: data.y });
+    if (!pixel) {
       throw Error("not found");
     }
     const user = new models.Users(data);
     await user.save();
 
-    pixel.discord={pseudo:data.pseudo, id:data.idDiscord};
+    pixel.discord = { pseudo: data.pseudo, id: data.idDiscord };
     await pixel.save();
     return '{"status":"ok"}';
   },

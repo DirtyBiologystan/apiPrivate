@@ -1,5 +1,5 @@
 const mongooseReq = require("mongoose");
-const https = require("https");
+const http = require("http");
 (async () => {
   let mongoose = await mongooseReq.connect("mongodb://mongo/drapeau");
 
@@ -23,8 +23,8 @@ const https = require("https");
   await datas.reduce(async (accu, data) => {
     await accu;
     return new Promise((resolve, reject) => {
-      https.get(
-        `https://admin.fouloscopie.com/users/${data.author}`,
+      http.get(
+        `http://back:8000/users/${data.author}`,
         (reqToFoulo) => {
           reqToFoulo.setEncoding("utf8");
           reqToFoulo.on("error", (err) => {
@@ -43,7 +43,7 @@ const https = require("https");
                 let parsedData;
                 parsedData = JSON.parse(rawData);
                 console.log(parsedData);
-                data.pseudo = parsedData.data.last_name;
+                data.pseudo = parsedData.last_name;
                 resolve(data.save());
               } catch (e) {
                 console.log(e);

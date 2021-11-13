@@ -5,13 +5,13 @@ Object.assign(module.exports, {
     },"index":${pixel.index},"hexColor":"${pixel.hexColor}","author":"${
       pixel.author
     }"${pixel.pseudo ? `,"pseudo":${JSON.stringify(pixel.pseudo)}` : ""}${
-      pixel.modifier.author
+      pixel.modifier && pixel.modifier.author
         ? `,"modifier":{"pseudo":${JSON.stringify(
             pixel.modifier.pseudo
           )},"author":"${pixel.modifier.author}"}`
         : ""
     }${
-      pixel.discord.pseudo
+      pixel.discord && pixel.discord.pseudo
         ? `,"discord":{"pseudo":${JSON.stringify(pixel.discord.pseudo)},"id":"${
             pixel.discord.id
           }"}`
@@ -23,13 +23,13 @@ Object.assign(module.exports, {
     },"index":${pixel.index},"hexColor":"${pixel.hexColor}","author":"${
       pixel.author
     }"${pixel.pseudo ? `,"pseudo":${JSON.stringify(pixel.pseudo)}` : ""}${
-      pixel.modifier.author
+      pixel.modifier && pixel.modifier.author
         ? `,"modifier":{"pseudo":${JSON.stringify(
             pixel.modifier.pseudo
           )},"author":"${pixel.modifier.author}"}`
         : ""
     }${
-      pixel.discord
+      pixel.discord && pixel.discord.pseudo
         ? `,"discord":{"pseudo":${JSON.stringify(pixel.discord.pseudo)},"id":"${
             pixel.discord.id
           }"}`

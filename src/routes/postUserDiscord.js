@@ -10,16 +10,18 @@ Object.assign(module.exports, {
     pseudo: Joi.string().required(),
     x: Joi.number().integer().positive().required(),
     y: Joi.number().integer().positive().required(),
-    idDiscord: Joi.number().integer().positive().unsafe().required(),
+    idDiscord: Joi.string().required(),
   }),
   handler: async (url, data) => {
-    console.log(models.Users);
+    const pixel = await models.Pixels.findOne({x:data.x,y:data.y});
+    if(!pixel){
+      throw Error("not found");
+    }
     const user = new models.Users(data);
     await user.save();
-    const datas = await model.find({ pseudo: { $exists: false } });
 
-    const pixel = await models.Pixels.findOne({x:data.x,y:data.y});
-    pixel.discord={pseudo:data.pseudo,idDiscord:data.idDiscord}
+    pixel.discord={pseudo:data.pseudo, id:data.idDiscord};
+    await pixel.save();
     return '{"status":"ok"}';
   },
 });

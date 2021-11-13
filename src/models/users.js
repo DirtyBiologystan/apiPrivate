@@ -4,7 +4,7 @@ module.exports = (mongoose) => {
     "Users",
     new Schema({
       pseudo: { type: String, index: true },
-      idDiscord: { type: Number, index: { unique: true } },
+      idDiscord: { type: String, index: { unique: true } },
       x: { type: Number, index: true },
       y: { type: Number, index: true },
     })

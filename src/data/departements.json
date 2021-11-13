@@ -74,7 +74,7 @@
   {
     "name": "Route de la résolution",
     "min": { "x": 1, "y": 101 },
-    "max": { "x": 100, "y": 120 },
+    "max": { "x": 101, "y": 120 },
     "discord": "https://discord.gg/dXRpvVbd8w"
   },
   {

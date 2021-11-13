@@ -31,7 +31,7 @@ module.exports = async (mongoose) => {
           return region.départements.indexOf(departement.name) !== -1;
         });
         if (!region) {
-          region = { name: departement.name };
+          region = { name: departement.name, discord: departement.discord };
         }
         return new model({
           ...departement,

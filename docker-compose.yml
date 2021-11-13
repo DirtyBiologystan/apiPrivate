@@ -21,6 +21,8 @@ services:
     ports:
       - 8001:3000
     command: ["npm","run","dev"]
+    environment:
+      - URL_FLAG=$URL_FLAG
   # sync:
   #   build: syncLastPseudo/
   #   volumes:

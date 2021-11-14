@@ -67,9 +67,7 @@ Object.assign(module.exports, {
     } else if (data.idDiscord) {
       pPixel = models["Pixels"].findOne(
         {
-          discord:{
-            id: data.idDiscord,
-          }
+          "discord.id": data.idDiscord,
         },
         { _id: false }
       );

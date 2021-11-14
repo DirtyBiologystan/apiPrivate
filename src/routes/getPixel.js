@@ -28,6 +28,9 @@ Object.assign(module.exports, {
     Joi.object({
       pseudo: Joi.string().required(),
     }),
+    Joi.object({
+      idDiscord: Joi.string().required(),
+    }),
     Joi.object({})
   ),
   handler: async (url, data) => {
@@ -58,6 +61,15 @@ Object.assign(module.exports, {
       pPixel = models["Pixels"].findOne(
         {
           pseudo: data.pseudo,
+        },
+        { _id: false }
+      );
+    } else if (data.idDiscord) {
+      pPixel = models["Pixels"].findOne(
+        {
+          discord:{
+            id: data.idDiscord,
+          }
         },
         { _id: false }
       );

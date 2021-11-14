@@ -15,6 +15,10 @@ module.exports = async (mongoose) => {
         pseudo: { type: String, index: true },
         id: { type: String, index: { unique: true, sparse: true } },
       },
+      modifier: {
+        author: { type: String, index: true },
+        pseudo: { type: String, index: true },
+      },
     })
   );
   await model.syncIndexes();

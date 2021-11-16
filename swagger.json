@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "⚠️ Le navigateur a du mal a supporté trop de data, récupére une grand quantité de pixels avec cette doc risque de faire planté votre navigateur",
+    "description": "⚠️ Le navigateur a du mal a supporté trop de data, récupére une grand quantité de pixels avec cette doc risque de faire planté votre navigateur\nPour récupére tout les pixel, il y a la route /pixels/ pas besoin de récupére 1 pixels par 1 pixels!",
     "version": "0.0.1",
     "title": "Private api",
     "contact": {
@@ -34,7 +34,7 @@
           "pixels"
         ],
         "summary": "get Pixel",
-        "description": "Récupére tout les pixels sans paramétre, sinon, récupére uniquement un pixel",
+        "description": "Récupére tout les pixels sans paramétre, sinon, récupére uniquement un pixel ( a par pour l'option Q)",
         "consumes": [
           "application/json"
         ],
@@ -70,6 +70,24 @@
             "description": "index du pixel",
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "name": "idDiscord",
+            "in": "query",
+            "description": "id discord",
+            "type": "string"
+          },
+          {
+            "name": "pseudo",
+            "in": "query",
+            "description": "pseudo du drapeau",
+            "type": "string"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "recherche dans le pseudo du drapeau",
+            "type": "string"
           }
         ],
         "responses": {
@@ -123,7 +141,14 @@
           {
             "name": "departement",
             "in": "query",
-            "description": "departement des pixels",
+            "description": "pixels du departement",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "departement",
+            "in": "query",
+            "description": "pixels du région",
             "required": false,
             "type": "string"
           },

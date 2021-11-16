@@ -54,6 +54,17 @@ Object.assign(module.exports, {
         { name: data.departement },
         { min: true, max: true, _id: false }
       );
+      if (!departement) {
+        throw Error("not found");
+        return;
+      }
+      pixels = await models["Pixels"].find(
+        {
+          x: { $gte: departement.min.x, $lte: departement.max.x },
+          y: { $gte: departement.min.y, $lte: departement.max.y },
+        },
+        { _id: false }
+      );
     } else if (data.region) {
       const departements = await models["Departements"].find(
         { region: data.region },

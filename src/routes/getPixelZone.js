@@ -25,6 +25,9 @@ Object.assign(module.exports, {
     }),
     Joi.object({
       departement: Joi.string().required(),
+    }),
+    Joi.object({
+      region: Joi.string().required(),
     })
   ),
 
@@ -51,16 +54,21 @@ Object.assign(module.exports, {
         { name: data.departement },
         { min: true, max: true, _id: false }
       );
-      if (!departement) {
+    } else if (data.region) {
+      const departements = await models["Departements"].find(
+        { region: data.region },
+        { min: true, max: true, _id: false }
+      );
+      if (!departements.length) {
         throw Error("not found");
         return;
       }
-
-      console.log(departement);
       pixels = await models["Pixels"].find(
         {
-          x: { $gte: departement.min.x, $lte: departement.max.x },
-          y: { $gte: departement.min.y, $lte: departement.max.y },
+          $or: departements.map((departement) => ({
+            x: { $gte: departement.min.x, $lte: departement.max.x },
+            y: { $gte: departement.min.y, $lte: departement.max.y },
+          })),
         },
         { _id: false }
       );

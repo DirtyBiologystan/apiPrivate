@@ -86,7 +86,7 @@
           {
             "name": "q",
             "in": "query",
-            "description": "recherche dans le pseudo du drapeau",
+            "description": "recherche dans les pseudo du drapeau",
             "type": "string"
           }
         ],
@@ -231,7 +231,7 @@
             "in":"query",
             "description": "name du département que l'on veux récupére",
             "required": false,
-            "type": "string",
+            "type": "string"
           }
         ],
         "responses": {

@@ -31,11 +31,15 @@ Object.assign(module.exports, {
                 let parsedData;
                 parsedData = JSON.parse(rawData);
                 resolve(
-                  `{"last_name":${JSON.stringify(parsedData.data.last_name)},"id":"${uuid}"}`
+                  `{"last_name":${JSON.stringify(
+                    parsedData.data.last_name
+                  )},"id":"${uuid}"}`
                 );
                 redis.set(
                   uuid,
-                  `{"last_name":${JSON.stringify(parsedData.data.last_name)},"id":"${uuid}"}`
+                  `{"last_name":${JSON.stringify(
+                    parsedData.data.last_name
+                  )},"id":"${uuid}"}`
                 );
               } catch (e) {
                 console.log(rawData);

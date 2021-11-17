@@ -211,7 +211,7 @@
   },
   {
     "name": "Plaines Fleuries",
-    "min": { "x": 1, "y": 210 },
+    "min": { "x": 1, "y": 211 },
     "max": { "x": 110, "y": 250 },
     "discord": "https://discord.gg/np6wjPnnvM"
   },
@@ -266,7 +266,7 @@
   {
     "name": "Grand Sud",
     "min": { "x": 1, "y": 121 },
-    "max": { "x": 100, "y": 210 },
+    "max": { "x": 100, "y": 211 },
     "discord": "https://discord.gg/q2BtFR6r2k"
   },
   {

@@ -134,7 +134,7 @@
   {
     "name": "Mer du Nord",
     "min": { "x": 291, "y": 1 },
-    "max": { "x": 340, "y": 47 },
+    "max": { "x": 340, "y": 49 },
     "discord": "https://discord.gg/eEJwPY7rPb"
   },
   {
@@ -259,7 +259,7 @@
   },
   {
     "name": "Mer Kraken Rosalie",
-    "min": { "x": 290, "y": 45 },
+    "min": { "x": 291, "y": 50 },
     "max": { "x": 330, "y": 79 },
     "discord": "https://discord.gg/fYdaEEej4M"
   },

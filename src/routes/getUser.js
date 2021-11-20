@@ -13,42 +13,48 @@ Object.assign(module.exports, {
       return user;
     } else {
       return new Promise((resolve, reject) => {
-        https.get(`${process.env.URL_GET_USER}${uuid}`, (reqToFoulo) => {
-          reqToFoulo.setEncoding("utf8");
-          reqToFoulo.on("error", (err) => {
-            reject(err);
-          });
-          if (reqToFoulo.statusCode === 403) {
-            redis.set(uuid, `{"last_name":"","id":"${uuid}"}`);
-            resolve(`{"last_name":"","id":"${uuid}"}`);
-          } else {
-            let rawData = "";
-            reqToFoulo.on("data", (chunk) => {
-              rawData += chunk;
+        https.get(
+          `${process.env.URL_GET_USER}${uuid}`,
+          {
+            headers: {Origin: process.env.ORIGIN, "User-Agent": "codati-scrap"},
+          },
+          (reqToFoulo) => {
+            reqToFoulo.setEncoding("utf8");
+            reqToFoulo.on("error", (err) => {
+              reject(err);
             });
-            reqToFoulo.on("end", () => {
-              try {
-                let parsedData;
-                parsedData = JSON.parse(rawData);
-                resolve(
-                  `{"last_name":${JSON.stringify(
-                    parsedData.data.last_name
-                  )},"id":"${uuid}"}`
-                );
-                redis.set(
-                  uuid,
-                  `{"last_name":${JSON.stringify(
-                    parsedData.data.last_name
-                  )},"id":"${uuid}"}`
-                );
-              } catch (e) {
-                console.log(rawData);
-                reject(e);
-                return;
-              }
-            });
+            if (reqToFoulo.statusCode === 403) {
+              redis.set(uuid, `{"last_name":"","id":"${uuid}"}`);
+              resolve(`{"last_name":"","id":"${uuid}"}`);
+            } else {
+              let rawData = "";
+              reqToFoulo.on("data", (chunk) => {
+                rawData += chunk;
+              });
+              reqToFoulo.on("end", () => {
+                try {
+                  let parsedData;
+                  parsedData = JSON.parse(rawData);
+                  resolve(
+                    `{"last_name":${JSON.stringify(
+                      parsedData.data.last_name
+                    )},"id":"${uuid}"}`
+                  );
+                  redis.set(
+                    uuid,
+                    `{"last_name":${JSON.stringify(
+                      parsedData.data.last_name
+                    )},"id":"${uuid}"}`
+                  );
+                } catch (e) {
+                  console.log(rawData);
+                  reject(e);
+                  return;
+                }
+              });
+            }
           }
-        });
+        );
       });
     }
   },
